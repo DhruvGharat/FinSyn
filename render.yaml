@@ -1,0 +1,31 @@
+services:
+  # FastAPI Backend Service
+  - type: web
+    name: finsyn-api
+    env: python
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: CONFIDENCE_HIGH
+        value: 0.85
+      - key: CONFIDENCE_LOW
+        value: 0.40
+      - key: GROQ_API_KEY
+        sync: false
+
+  # Streamlit Dashboard Service
+  - type: web
+    name: finsyn-dashboard
+    env: python
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GROQ_API_KEY
+        sync: false
