@@ -1,5 +1,7 @@
 # Razorpay AI Finance Controller
 
+🚀 **Live Demo**: [https://finsyn.streamlit.app/](https://finsyn.streamlit.app/)
+
 An autonomous, multi-ledger financial reconciliation system built around a strict core principle:
 
 > **PYTHON + OPTIMIZATION + ML MAKE ALL MATCHING DECISIONS. LLMs DO NOT DECIDE WHETHER TRANSACTIONS MATCH.**
