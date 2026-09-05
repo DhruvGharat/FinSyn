@@ -15,7 +15,7 @@ llm_available = bool(GROQ_KEY and GROQ_KEY.strip() and not GROQ_KEY.startswith("
 
 if llm_available:
     try:
-        llm = ChatGroq(model="llama-3.3-70b-specdec", temperature=0, timeout=10)
+        llm = ChatGroq(model="llama-3.3-70b-specdec", temperature=0)
     except Exception:
         llm = None
         llm_available = False

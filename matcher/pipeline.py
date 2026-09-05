@@ -50,6 +50,11 @@ def run_reconciliation_pipeline(
     else:
         scored_df = pd.DataFrame(columns=["erp_invoice_id", "bank_ref", "gw_ref", "confidence", "confidence_zone"])
 
+    # Deduplicate — keep only best match per ERP invoice
+    if not scored_df.empty:
+        scored_df = scored_df.sort_values("confidence", ascending=False)
+        scored_df = scored_df.drop_duplicates(subset=["erp_invoice_id"], keep="first")
+
     # Merge Hungarian assignment decision into scored candidate pairs
     hungarian_map = {row["erp_invoice_id"]: row for _, row in hungarian_assignments.iterrows()}
 
