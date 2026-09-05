@@ -34,6 +34,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from generator.synthetic import generate_transaction_set
 from matcher.pipeline import run_reconciliation_pipeline
 
