@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 
 # Set page layout & custom CSS
 st.set_page_config(
-    page_title="Razorpay AI Finance Controller",
+    page_title="Finsyn AI Finance Controller",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
