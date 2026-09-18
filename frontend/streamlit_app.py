@@ -40,7 +40,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from generator.synthetic import generate_transaction_set
 from matcher.pipeline import run_reconciliation_pipeline
 
-st.title("⚡ Razorpay AI Finance Controller")
+st.title("⚡ Finsyn AI Finance Controller")
 st.caption("Autonomous Financial Reconciliation Engine — Deterministic Optimization + XGBoost + Skeptical LLM Auditor")
 
 # Initialize session state
